@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>{{ title }}</title>
+
+    <style>
+      html, body, h1, h2, h3, h4, h5, p {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+        font-size: 18px;
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      body > header {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        border-bottom: 1px solid black;
+
+        margin-bottom: 1rem;
+      }
+
+      body > header > h1 {
+        margin: 1rem;
+      }
+
+      body > main {
+        max-width: 40rem;
+        width: calc(100% - 2rem);
+      }
+
+      body > main > section.content > blockquote,
+      body > main > section.content > hr,
+      body > main > section.content > p,
+      body > main > section.content > pre {
+        margin-bottom: 0.8rem;
+      }
+
+      body > main > section.content > :last-child {
+        margin-bottom: 0;
+      }
+
+      body > main > section.content code {
+        font-size: 14px;
+      }
+
+      body > footer {
+        margin-top: 1rem;
+        border-top: 1px solid black;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body > footer section.copyright {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Wiki</h1>
+    </header>
+
+    <main>
+      <h2>{{ title }}</h2>
+      <section class='content'>
+        {{ content | safe }}
+      </section>
+    </main>
+
+    <footer>
+      <section class='copyright'>
+        &copy; 2022 by David Kerkeslager
+      </section>
+    </footer>
+  </body>
+</html>
